@@ -20,6 +20,12 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		//Testing subdomain system
+		$subdomain_arr = explode('.', $_SERVER['HTTP_HOST'], 2);
+		if(count($subdomain_arr) > 1)
+			echo $subdomain_arr[0];
+
+
 		$this->load->view('welcome_message');
 	}
 }
